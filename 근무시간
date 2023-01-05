@@ -1,0 +1,9 @@
+import sys
+input = sys.stdin.readline
+
+summ = 0
+for i in range(5):
+    s,e = input().split()
+    work_time = (int(e[:2]) - int(s[:2])) * 60 + (int(e[3:]) - int(s[3:])) # 배운 점
+    summ += work_time
+print(summ)
