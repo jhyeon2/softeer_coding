@@ -1,0 +1,25 @@
+import sys
+input = sys.stdin.readline
+N,M = map(int,input().split())
+
+limit_speed = [0 for i in range(101)]
+height_1 = 0
+
+for i in range(N):
+    ll, ls = map(int,input().split())
+    for j in range(height_1+1, height_1+ll+1):
+        limit_speed[j] = ls
+    height_1 += ll
+
+speed = [0 for i in range(101)]
+height_2 = 0
+for i in range(M):
+    rl, rs = map(int,input().split())
+    for j in range(height_2 + 1, height_2 + rl +1):
+        speed[j] = rs
+    height_2 += rl
+
+max_value = 0
+for i in range(101):
+    max_value = max(max_value, speed[i] - limit_speed[i])
+print(max_value)
