@@ -1,0 +1,18 @@
+import sys
+input = sys.stdin.readline
+
+w, n = map(int, input().split())
+jewels = [list(map(int, input().split())) for _ in range(n)]
+jewels.sort(key=lambda x : x[1], reverse = True)
+
+ans = 0
+
+for weights, price in jewels:
+    if w > weights:
+        ans += weights * price
+        w -= weights
+    else:
+        ans += w * price
+        break
+
+print(ans)
