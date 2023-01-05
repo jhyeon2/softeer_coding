@@ -3,7 +3,9 @@ input = sys.stdin.readline
 
 w, n = map(int, input().split())
 jewels = [list(map(int, input().split())) for _ in range(n)]
-jewels.sort(key=lambda x : x[1], reverse = True)
+jewels.sort(key=lambda x : x[1], reverse = True)  
+
+# 배운점, key = lambda는 오름차순 정렬 / x : x[1]은 [1]번째의 값으로 정렬하겠다는 뜻 / reverse = True는 False가 기본값이고, 값을 True를 주게 되면 내림차순으로 변형됨.
 
 ans = 0
 
